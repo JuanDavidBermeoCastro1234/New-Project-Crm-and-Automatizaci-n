@@ -10,6 +10,8 @@
   --blue-dark: #0866c4;
   --orange: #ff7a18;
   --orange-soft: #fff1e7;
+  --whatsapp: #25d366;
+  --whatsapp-dark: #128c4a;
   --shadow: 0 22px 60px rgba(7, 17, 31, 0.18);
 }
 
@@ -97,10 +99,18 @@ textarea {
 .header-cta {
   justify-self: end;
   padding: 11px 18px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(37, 211, 102, 0.45);
   border-radius: 6px;
   color: var(--white);
+  background: linear-gradient(135deg, var(--whatsapp), var(--whatsapp-dark));
+  box-shadow: 0 10px 24px rgba(37, 211, 102, 0.2);
   font-weight: 700;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.header-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(37, 211, 102, 0.28);
 }
 
 .menu-toggle {
@@ -715,7 +725,8 @@ textarea:focus {
 
 @media (max-width: 760px) {
   .site-header {
-    grid-template-columns: auto auto;
+    grid-template-columns: auto 1fr auto;
+    gap: 12px;
   }
 
   .brand img {
@@ -726,28 +737,37 @@ textarea:focus {
   .menu-toggle {
     display: grid;
     justify-self: end;
+    order: 3;
   }
 
-  .main-nav,
+  .brand {
+    order: 1;
+  }
+
   .header-cta {
+    display: inline-flex;
+    order: 2;
+    justify-self: end;
+    min-height: 42px;
+    padding: 10px 13px;
+    font-size: 0.88rem;
+  }
+
+  .main-nav {
     display: none;
   }
 
-  .site-header.is-open .main-nav,
-  .site-header.is-open .header-cta {
+  .site-header.is-open .main-nav {
     display: flex;
     grid-column: 1 / -1;
     justify-self: stretch;
+    order: 4;
   }
 
   .site-header.is-open .main-nav {
     flex-direction: column;
     gap: 14px;
     padding-top: 12px;
-  }
-
-  .site-header.is-open .header-cta {
-    justify-content: center;
   }
 
   .hero {
