@@ -1136,7 +1136,7 @@ textarea:focus {
   }
 
   .split-visual {
-    min-height: auto;
+    display: none;
   }
 }
 
