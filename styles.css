@@ -390,6 +390,13 @@ h3 {
   text-align: center;
 }
 
+.section-subtitle {
+  max-width: 760px;
+  margin: 18px auto 0;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 1.05rem;
+}
+
 .service-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -431,6 +438,190 @@ h3 {
 
 .service-card.featured p {
   color: rgba(255, 255, 255, 0.78);
+}
+
+.plans {
+  position: relative;
+}
+
+.plans-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  align-items: stretch;
+  margin-top: 48px;
+}
+
+.plan-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 26px;
+  border: 1px solid rgba(56, 189, 248, 0.34);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(15, 32, 54, 0.96), rgba(8, 17, 31, 0.96)),
+    var(--ink);
+  box-shadow: 0 22px 54px rgba(0, 0, 0, 0.22);
+}
+
+.plan-card.highlighted {
+  border-color: rgba(255, 122, 24, 0.86);
+  box-shadow: 0 26px 72px rgba(255, 122, 24, 0.18);
+  transform: translateY(-12px);
+}
+
+.plan-card.premium {
+  border-color: rgba(255, 209, 102, 0.7);
+}
+
+.plan-badge {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  padding: 7px 10px;
+  border-radius: 999px;
+  color: #16100a;
+  background: linear-gradient(135deg, #ffd166, var(--orange));
+  font-size: 0.73rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.plan-kicker {
+  display: inline-flex;
+  margin-bottom: 12px;
+  color: #55e6ff;
+  font-size: 0.9rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.plan-header {
+  padding-right: 96px;
+}
+
+.plan-card:not(.highlighted) .plan-header {
+  padding-right: 0;
+}
+
+.plan-header h3 {
+  color: var(--white);
+  font-size: clamp(1.5rem, 2.4vw, 2.1rem);
+}
+
+.plan-header p {
+  min-height: 78px;
+  margin: 14px 0 0;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.plan-price {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  margin-top: 22px;
+  padding: 18px;
+  border: 1px solid rgba(85, 230, 255, 0.3);
+  border-radius: 8px;
+  background: rgba(3, 10, 22, 0.68);
+}
+
+.plan-price strong {
+  color: var(--white);
+  font-size: clamp(2.15rem, 4vw, 3.5rem);
+  line-height: 0.95;
+}
+
+.plan-price span {
+  color: #55e6ff;
+  font-size: 1.1rem;
+  font-weight: 900;
+}
+
+.plan-warning {
+  display: grid;
+  gap: 4px;
+  margin-top: 14px;
+  padding: 13px 14px;
+  border: 1px solid rgba(255, 65, 65, 0.68);
+  border-radius: 8px;
+  color: var(--white);
+  background: linear-gradient(135deg, rgba(170, 20, 20, 0.86), rgba(70, 5, 12, 0.86));
+}
+
+.plan-warning strong {
+  color: #fff177;
+  text-transform: uppercase;
+}
+
+.plan-warning span {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.9rem;
+}
+
+.plan-body {
+  margin-top: 22px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.plan-body h4 {
+  margin: 0 0 14px;
+  color: #55e6ff;
+  font-size: 1.2rem;
+}
+
+.plan-body ul {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.plan-body li {
+  position: relative;
+  padding-left: 22px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.94rem;
+}
+
+.plan-body li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.66em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #55e6ff;
+  box-shadow: 0 0 0 4px rgba(85, 230, 255, 0.12);
+}
+
+.plan-fit {
+  margin: auto 0 0;
+  padding-top: 22px;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 800;
+}
+
+.plan-fit::first-line {
+  color: #55e6ff;
+}
+
+.plan-button {
+  width: 100%;
+  margin-top: 20px;
+  color: #06111f;
+  background: linear-gradient(135deg, #55e6ff, var(--blue));
+  box-shadow: 0 12px 28px rgba(15, 143, 232, 0.24);
+}
+
+.highlighted .plan-button {
+  background: linear-gradient(135deg, var(--orange), #ffd166);
+  box-shadow: 0 12px 30px rgba(255, 122, 24, 0.25);
 }
 
 .split {
@@ -713,9 +904,14 @@ textarea:focus {
   }
 
   .service-grid,
+  .plans-grid,
   .timeline,
   .case-list {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .plan-card.highlighted {
+    transform: none;
   }
 
   .hero {
@@ -779,6 +975,7 @@ textarea:focus {
   }
 
   .service-grid,
+  .plans-grid,
   .timeline,
   .case-list,
   .dashboard-columns,
@@ -793,6 +990,21 @@ textarea:focus {
 
   .service-number {
     margin-bottom: 26px;
+  }
+
+  .plan-header,
+  .plan-card:not(.highlighted) .plan-header {
+    padding-right: 0;
+  }
+
+  .plan-badge {
+    position: static;
+    width: fit-content;
+    margin-bottom: 16px;
+  }
+
+  .plan-header p {
+    min-height: 0;
   }
 
   .split-visual {
