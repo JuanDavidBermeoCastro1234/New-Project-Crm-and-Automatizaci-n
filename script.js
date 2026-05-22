@@ -21,12 +21,12 @@ document.querySelectorAll(".main-nav a").forEach((link) => {
 function getFormMessage() {
   const data = new FormData(form);
   return [
-    "Hola ScaleUp, quiero apartar una asesoria.",
+    "Hola ScaleUp, quiero apartar una asesoría.",
     "",
     `Nombre: ${data.get("name")}`,
     `Empresa: ${data.get("company")}`,
-    `Telefono: ${data.get("phone")}`,
-    `Interes principal: ${data.get("service")}`,
+    `Teléfono: ${data.get("phone")}`,
+    `Plan de interés: ${data.get("plan")}`,
     `Necesidad: ${data.get("message")}`
   ].join("\n");
 }
@@ -56,7 +56,8 @@ emailButton.addEventListener("click", () => {
     return;
   }
 
-  const subject = encodeURIComponent("Solicitud de asesoria - ScaleUp");
+  const subject = encodeURIComponent("Solicitud de asesoría - ScaleUp");
   const body = encodeURIComponent(getFormMessage());
   window.location.href = `mailto:${emailAddress}?subject=${subject}&body=${body}`;
+  
 });
