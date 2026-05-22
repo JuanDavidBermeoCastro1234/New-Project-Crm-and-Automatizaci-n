@@ -546,6 +546,11 @@ h3 {
   color: var(--muted);
 }
 
+.chatbot-buy-button {
+  width: 100%;
+  margin-top: 4px;
+}
+
 .plans {
   position: relative;
 }
@@ -1120,6 +1125,14 @@ textarea:focus {
 
   .chatbot-phone {
     min-height: 380px;
+  }
+
+  .split-copy {
+    order: 1;
+  }
+
+  .split-visual {
+    order: 2;
   }
 
   .split-visual {
