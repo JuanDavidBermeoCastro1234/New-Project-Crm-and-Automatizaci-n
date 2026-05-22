@@ -440,6 +440,112 @@ h3 {
   color: rgba(255, 255, 255, 0.78);
 }
 
+.chatbot-section {
+  display: grid;
+  grid-template-columns: minmax(0, 0.88fr) minmax(340px, 1.12fr);
+  gap: clamp(30px, 6vw, 78px);
+  align-items: center;
+  background:
+    linear-gradient(180deg, rgba(245, 248, 252, 0.84), rgba(255, 255, 255, 1)),
+    var(--surface);
+}
+
+.chatbot-copy p {
+  color: var(--muted);
+  font-size: 1.06rem;
+}
+
+.chatbot-copy .button {
+  margin-top: 14px;
+}
+
+.chatbot-showcase {
+  display: grid;
+  grid-template-columns: minmax(250px, 0.9fr) minmax(0, 1fr);
+  gap: 18px;
+  align-items: stretch;
+}
+
+.chatbot-phone {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 460px;
+  padding: 22px;
+  border: 1px solid rgba(37, 211, 102, 0.34);
+  border-radius: 8px;
+  background:
+    radial-gradient(circle at 80% 0%, rgba(37, 211, 102, 0.2), transparent 34%),
+    linear-gradient(180deg, #07111f, #0d1728);
+  box-shadow: var(--shadow);
+}
+
+.phone-top {
+  width: 72px;
+  height: 6px;
+  margin: 0 auto 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.message {
+  max-width: 92%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  color: var(--white);
+  font-size: 0.94rem;
+}
+
+.message.bot {
+  align-self: flex-start;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.message.user {
+  align-self: flex-end;
+  color: #06111f;
+  background: var(--whatsapp);
+}
+
+.status-message {
+  margin-top: auto;
+  max-width: 100%;
+  text-align: center;
+  color: #b8ffd4;
+  background: rgba(37, 211, 102, 0.14);
+  border: 1px solid rgba(37, 211, 102, 0.28);
+  font-weight: 900;
+}
+
+.chatbot-benefits {
+  display: grid;
+  gap: 14px;
+}
+
+.chatbot-benefits article {
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--white);
+  box-shadow: 0 12px 30px rgba(7, 17, 31, 0.06);
+}
+
+.chatbot-benefits strong,
+.chatbot-benefits span {
+  display: block;
+}
+
+.chatbot-benefits strong {
+  color: var(--ink);
+  font-size: 1.06rem;
+}
+
+.chatbot-benefits span {
+  margin-top: 7px;
+  color: var(--muted);
+}
+
 .plans {
   position: relative;
 }
@@ -897,6 +1003,7 @@ textarea:focus {
 @media (max-width: 1040px) {
   .hero,
   .intro,
+  .chatbot-section,
   .split,
   .proof,
   .contact {
@@ -912,6 +1019,10 @@ textarea:focus {
 
   .plan-card.highlighted {
     transform: none;
+  }
+
+  .chatbot-showcase {
+    grid-template-columns: 1fr;
   }
 
   .hero {
@@ -1005,6 +1116,10 @@ textarea:focus {
 
   .plan-header p {
     min-height: 0;
+  }
+
+  .chatbot-phone {
+    min-height: 380px;
   }
 
   .split-visual {
